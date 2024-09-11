@@ -1,0 +1,23 @@
+# CST370-HW4_2_Java
+
+(hw4_2) Write a Java program for hw4_2 that conducts the topological sorting based on the Kahn algorithm covered in the lecture. 
+
+Input format: This is a sample input from a user
+
+4 
+5
+0 1
+0 2
+0 3
+1 3
+2 3
+
+The first line (= 4 in the example) indicates that there are four vertices in the graph. For the homework, you can assume that the first vertex starts from the number 0. The second line (= 5 in the example) represents the number of edges in the graph, and following five lines are the edges.
+
+This is the correct output. Your program should display the numbers of incoming degrees of each vertex first. For example, the vertex 3 has three incoming degrees which is represented as “In-degree[3]:3”. After the incoming degree information, your program should display the topological order as you learned in the class.
+
+In-degree[0]:0
+In-degree[1]:1
+In-degree[2]:1
+In-degree[3]:3
+Order:0->1->2->3
