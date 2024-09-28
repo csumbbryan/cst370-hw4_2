@@ -26,7 +26,7 @@ class Main
 
         int nodeCount = Integer.parseInt(scanner.nextLine());
         int edgeCount = Integer.parseInt(scanner.nextLine());
-        ArrayList<List<Integer>> adjList = new ArrayList<>(nodeCount);
+        ArrayList<List<Integer>> adjList = new ArrayList<>();
 
         for (int i = 0; i < edgeCount; i++) {
             String line = scanner.nextLine();
