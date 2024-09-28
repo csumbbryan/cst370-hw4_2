@@ -33,6 +33,7 @@ class Main
             String[] strArr = line.split(" ");
             int node1 = Integer.parseInt(strArr[0]);
             int node2 = Integer.parseInt(strArr[1]);
+            adjList.add(new ArrayList<>());
             adjList.get(node1).add(node2);
         }
 
