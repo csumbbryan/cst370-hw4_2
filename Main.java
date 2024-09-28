@@ -28,6 +28,7 @@ class Main
         int edgeCount = Integer.parseInt(scanner.nextLine());
         ArrayList<List<Integer>> adjList = new ArrayList<>();
 
+        //Read input and create adjacency list
         for (int i = 0; i < edgeCount; i++) {
             String line = scanner.nextLine();
             String[] strArr = line.split(" ");
@@ -39,6 +40,19 @@ class Main
 
         System.out.println(adjList);
 
+        //Create initial in degree array
+
+        ArrayList<Integer> inDegree = new ArrayList<>();
+        for (int i = 0; i < nodeCount; i++) {
+            inDegree.add(0);
+        }
+        for (int i = 0; i < nodeCount; i++) {
+            for (int j = 0 ; j < adjList.get(i).size(); j++) {
+                inDegree.set(adjList.get(i).get(j), inDegree.get(adjList.get(i).get(j)) + 1);
+            }
+        }
+
+        System.out.println(inDegree);
 
         // Develop your program here.
         // The following is just a sample statement and and you need to replace it with your code
@@ -53,10 +67,6 @@ class Main
         // Update in degree based on number of incoming edges after removal
         // If in degree is 0, add to queue
         // After all nodes have been added and removed from queue, job completed
-
-
-
-        System.out.println("Hello world!");
     }
 }
 
