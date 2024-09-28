@@ -61,6 +61,7 @@ class Main
 
         //Cycle through queues
         int nodeRemaining = nodeCount;
+        boolean cycleDetected = false;
         while(nodeRemaining > 0) {
             for (int i = 0; i < nodeCount; i++) {
                 if (inDegree.get(i) == 0) {
@@ -70,8 +71,8 @@ class Main
                     nodeRemaining--;
                 }
             }
-            if(nodeRemaining > 0 && !workingQueue.isEmpty()) {
-                System.out.println("Cycle detected");
+            if(nodeRemaining > 0 && workingQueue.isEmpty()) {
+                cycleDetected = true;
                 break;
             }
             while (workingQueue.size() > 0) {
@@ -89,11 +90,16 @@ class Main
 
         }
 
-        String output = "Order:";
-        for(int i = 0; i < finalQueue.size() - 1; i++) {
-            output+= finalQueue.get(i) + "->";
+        String output = "";
+        if(cycleDetected) {
+            output += "No Order:";
+        } else {
+            output += "Order:";
+            for (int i = 0; i < finalQueue.size() - 1; i++) {
+                output += finalQueue.get(i) + "->";
+            }
+            output += finalQueue.get(finalQueue.size() - 1);
         }
-        output += finalQueue.get(finalQueue.size() - 1);
         System.out.println(output);
 
 
