@@ -76,7 +76,7 @@ class Main
                 workingQueue.remove(0);
                 finalQueue.add(node);
 
-                System.out.println("Final Queue: " + finalQueue);
+                //System.out.println("Final Queue: " + finalQueue);
                 for (int j = 0; j < adjList.get(node).size(); j++) {
                     //System.out.println("Adj Node: " + adjList.get(node).get(j));
                     inDegree.set(adjList.get(node).get(j), inDegree.get(adjList.get(node).get(j)) - 1);
