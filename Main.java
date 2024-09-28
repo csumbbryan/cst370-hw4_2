@@ -27,6 +27,9 @@ class Main
         int nodeCount = Integer.parseInt(scanner.nextLine());
         int edgeCount = Integer.parseInt(scanner.nextLine());
         ArrayList<List<Integer>> adjList = new ArrayList<>();
+        ArrayList<Integer> inDegree = new ArrayList<>();
+        ArrayList<Integer> workingQueue = new ArrayList<>();
+        ArrayList<Integer> finalQueue = new ArrayList<>();
 
         for (int i = 0; i < nodeCount; i++) {
             adjList.add(new ArrayList<>());
@@ -44,8 +47,6 @@ class Main
         System.out.println(adjList);
 
         //Create initial in degree array
-
-        ArrayList<Integer> inDegree = new ArrayList<>();
         for (int i = 0; i < nodeCount; i++) {
             inDegree.add(0);
         }
@@ -55,7 +56,29 @@ class Main
             }
         }
 
+        //Cycle through queues
+        int nodeRemaining = nodeCount;
+        while(nodeRemaining > 0) {
+            for (int i = 0; i < nodeCount; i++) {
+                if (inDegree.get(i) == 0) {
+                    workingQueue.add(i);
+                    //inDegree.set(i, -1);
+                    nodeRemaining--;
+                }
+            }
+            while (workingQueue.size() > 0) {
+                int node = workingQueue.get(0);
+                workingQueue.remove(0);
+                finalQueue.add(node);
+                for (int j = 0; j < adjList.get(node).size(); j++) {
+                    inDegree.set(adjList.get(node).get(j), inDegree.get(adjList.get(node).get(j)) - 1);
+                }
+            }
+        }
+
         System.out.println(inDegree);
+        System.out.println(finalQueue);
+
 
         // Develop your program here.
         // The following is just a sample statement and and you need to replace it with your code
