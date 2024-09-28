@@ -87,7 +87,6 @@ class Main
                     inDegree.set(adjList.get(node).get(j), inDegree.get(adjList.get(node).get(j)) - 1);
                 }
             }
-
         }
 
         String output = "";
