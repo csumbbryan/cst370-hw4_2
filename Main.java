@@ -13,14 +13,48 @@
  * Name: Write your name
  * Date: MM/DD/YYYY
  */
- 
-class Main 
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Main
 {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+
+        int nodeCount = Integer.parseInt(scanner.nextLine());
+        int edgeCount = Integer.parseInt(scanner.nextLine());
+        ArrayList<List<Integer>> adjList = new ArrayList<>(nodeCount);
+
+        for (int i = 0; i < edgeCount; i++) {
+            String line = scanner.nextLine();
+            String[] strArr = line.split(" ");
+            int node1 = Integer.parseInt(strArr[0]);
+            int node2 = Integer.parseInt(strArr[1]);
+            adjList.get(node1).add(node2);
+        }
+
+        System.out.println(adjList);
+
+
         // Develop your program here.
         // The following is just a sample statement and and you need to replace it with your code
-        
+
+        //Two Data Structures
+        // "In Degree" - array of size = number of nodes
+        // Number of edges coming into a node
+
+        // Queue - store nodes in topological order
+
+        // During each iteration - remove 1 node with 0 in degree from queue
+        // Update in degree based on number of incoming edges after removal
+        // If in degree is 0, add to queue
+        // After all nodes have been added and removed from queue, job completed
+
+
+
         System.out.println("Hello world!");
     }
 }
