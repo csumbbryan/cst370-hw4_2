@@ -44,8 +44,6 @@ class Main
             adjList.get(node1).add(node2);
         }
 
-        System.out.println(adjList);
-
         //Create initial in degree array
         for (int i = 0; i < nodeCount; i++) {
             inDegree.add(0);
@@ -67,27 +65,31 @@ class Main
             for (int i = 0; i < nodeCount; i++) {
                 if (inDegree.get(i) == 0) {
                     workingQueue.add(i);
-                    System.out.println("Working Queue: " + workingQueue);
+                    //System.out.println("Working Queue: " + workingQueue);
                     inDegree.set(i, -1);
                     nodeRemaining--;
                 }
             }
             while (workingQueue.size() > 0) {
                 int node = workingQueue.get(0);
-                System.out.println("Node: " + node);
+                //System.out.println("Node: " + node);
                 workingQueue.remove(0);
                 finalQueue.add(node);
 
                 System.out.println("Final Queue: " + finalQueue);
                 for (int j = 0; j < adjList.get(node).size(); j++) {
-                    System.out.println("Adj Node: " + adjList.get(node).get(j));
+                    //System.out.println("Adj Node: " + adjList.get(node).get(j));
                     inDegree.set(adjList.get(node).get(j), inDegree.get(adjList.get(node).get(j)) - 1);
                 }
             }
         }
 
-
-        System.out.println(finalQueue);
+        String output = "Order:";
+        for(int i = 0; i < finalQueue.size() - 1; i++) {
+            output+= finalQueue.get(i) + "->";
+        }
+        output += finalQueue.get(finalQueue.size() - 1);
+        System.out.println(output);
 
 
         // Develop your program here.
