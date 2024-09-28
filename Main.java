@@ -57,6 +57,9 @@ class Main
         }
 
         System.out.println(inDegree);
+        for (int i = 0; i < nodeCount; i++) {
+            System.out.println("In-degree[" + i + "]:" + inDegree.get(i));
+        }
 
         //Cycle through queues
         int nodeRemaining = nodeCount;
