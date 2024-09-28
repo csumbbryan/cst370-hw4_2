@@ -70,6 +70,10 @@ class Main
                     nodeRemaining--;
                 }
             }
+            if(nodeRemaining > 0 && !workingQueue.isEmpty()) {
+                System.out.println("Cycle detected");
+                break;
+            }
             while (workingQueue.size() > 0) {
                 int node = workingQueue.get(0);
                 //System.out.println("Node: " + node);
@@ -82,6 +86,7 @@ class Main
                     inDegree.set(adjList.get(node).get(j), inDegree.get(adjList.get(node).get(j)) - 1);
                 }
             }
+
         }
 
         String output = "Order:";
