@@ -29,7 +29,7 @@ class Main
         ArrayList<List<Integer>> adjList = new ArrayList<>();
 
         //Read input and create adjacency list
-        for (int i = 0; i < edgeCount; i++) {
+        for (int i = 0; i < nodeCount; i++) {
             String line = scanner.nextLine();
             String[] strArr = line.split(" ");
             int node1 = Integer.parseInt(strArr[0]);
