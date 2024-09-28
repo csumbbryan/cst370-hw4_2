@@ -28,13 +28,16 @@ class Main
         int edgeCount = Integer.parseInt(scanner.nextLine());
         ArrayList<List<Integer>> adjList = new ArrayList<>();
 
-        //Read input and create adjacency list
         for (int i = 0; i < nodeCount; i++) {
+            adjList.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < edgeCount; i++) {
             String line = scanner.nextLine();
             String[] strArr = line.split(" ");
             int node1 = Integer.parseInt(strArr[0]);
             int node2 = Integer.parseInt(strArr[1]);
-            adjList.add(new ArrayList<>());
+
             adjList.get(node1).add(node2);
         }
 
