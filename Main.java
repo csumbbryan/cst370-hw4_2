@@ -24,7 +24,7 @@ class Main
 
         Scanner scanner = new Scanner(System.in);
 
-        int nodeCount = Integer.parseInt(scanner.nextLine());
+        int nodeCount = Integer.parseInt(scanner.nextLine().split(" ")[0]);
         int edgeCount = Integer.parseInt(scanner.nextLine());
         ArrayList<List<Integer>> adjList = new ArrayList<>();
         ArrayList<Integer> inDegree = new ArrayList<>();
