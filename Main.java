@@ -9,9 +9,10 @@
 
 // Finish the head comment with Abstract, Name, and Date.
 /*
- * Abstract: Describe the main ideas of the program.
- * Name: Write your name
- * Date: MM/DD/YYYY
+ * Abstract: Program accepts a graph in the form of num of nodes, edges, and edge pairs. It
+ * then outputs the initial in-degree of each node, along with the topological order of the graph
+ * Name: Bryan Zanoli
+ * Date: 10/01/2024
  */
 
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ class Main
                 cycleDetected = true;
                 break;
             }
-            while (workingQueue.size() > 0) {
+            while (!workingQueue.isEmpty()) {
                 int node = workingQueue.get(0);
                 //System.out.println("Node: " + node);
                 workingQueue.remove(0);
@@ -100,21 +101,6 @@ class Main
             output += finalQueue.get(finalQueue.size() - 1);
         }
         System.out.println(output);
-
-
-        // Develop your program here.
-        // The following is just a sample statement and and you need to replace it with your code
-
-        //Two Data Structures
-        // "In Degree" - array of size = number of nodes
-        // Number of edges coming into a node
-
-        // Queue - store nodes in topological order
-
-        // During each iteration - remove 1 node with 0 in degree from queue
-        // Update in degree based on number of incoming edges after removal
-        // If in degree is 0, add to queue
-        // After all nodes have been added and removed from queue, job completed
     }
 }
 
