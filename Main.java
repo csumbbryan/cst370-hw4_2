@@ -67,7 +67,7 @@ class Main
             for (int i = 0; i < nodeCount; i++) {
                 if (inDegree.get(i) == 0) {
                     workingQueue.add(i);
-                    //System.out.println("Working Queue: " + workingQueue);
+                    System.out.println("Working Queue: " + workingQueue);
                     inDegree.set(i, -1);
                     nodeRemaining--;
                 }
@@ -78,13 +78,13 @@ class Main
             }
             while (!workingQueue.isEmpty()) {
                 int node = workingQueue.get(0);
-                //System.out.println("Node: " + node);
+                System.out.println("Node: " + node);
                 workingQueue.remove(0);
                 finalQueue.add(node);
 
-                //System.out.println("Final Queue: " + finalQueue);
+                System.out.println("Final Queue: " + finalQueue);
                 for (int j = 0; j < adjList.get(node).size(); j++) {
-                    //System.out.println("Adj Node: " + adjList.get(node).get(j));
+                    System.out.println("Adj Node: " + adjList.get(node).get(j));
                     inDegree.set(adjList.get(node).get(j), inDegree.get(adjList.get(node).get(j)) - 1);
                 }
             }
