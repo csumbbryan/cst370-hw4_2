@@ -76,7 +76,8 @@ class Main
                 cycleDetected = true;
                 break;
             }
-            while (!workingQueue.isEmpty()) {
+            if(!workingQueue.isEmpty()) {
+            //while (!workingQueue.isEmpty()) {
                 int node = workingQueue.get(0);
                 System.out.println("Node: " + node);
                 workingQueue.remove(0);
